@@ -14,6 +14,7 @@ def xor(shellcode, key):
         # Effectuer l'opération de XOR sur chaque octet
         xored_byte = shellcode_bytes[i] ^ key_bytes[i % key_length]
         xored_shellcode.append(xored_byte)
+        # Parse du shellcode
         hex_shellcode = bytetohex(xored_shellcode)
         crypted_shellcode = unsplitter(hex_shellcode)
 

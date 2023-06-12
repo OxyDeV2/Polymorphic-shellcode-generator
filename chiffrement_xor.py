@@ -1,6 +1,7 @@
 
 def xor(monshellcode, cle):
 
+    print("Arguments reçus xor :", monshellcode, cle)
     # Parsing du shellcode str -> bytes ou chaques paires de type 0xAA = un octet
     shellcodeparsed = bytes.fromhex(monshellcode)
     xored_monshellcode = bytearray()

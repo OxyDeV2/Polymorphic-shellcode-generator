@@ -18,5 +18,4 @@ def xor(shellcode, key):
         hex_shellcode = bytetohex(xored_shellcode)
         crypted_shellcode = unsplitter(hex_shellcode)
 
-    
-    print("Shellcode chiffré -> ", crypted_shellcode)
+    print("- Shellcode chiffré : ", crypted_shellcode, "\n- Taille : ",len(shellcode)*4," bit(s)\n")

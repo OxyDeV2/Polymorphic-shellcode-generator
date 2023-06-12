@@ -1,16 +1,16 @@
 
-def xor(monshellcode, cle):
+def xor(shellcode, key):
 
-    print("Arguments reçus xor :", monshellcode, cle)
-    # Parsing du shellcode str -> bytes ou chaques paires de type 0xAA = un octet
-    shellcodeparsed = bytes.fromhex(monshellcode)
-    xored_monshellcode = bytearray()
+    # Conversion de la chaîne de caractères en bytes
+    shellcode_bytes = bytes.fromhex(shellcode)
+    key_bytes = bytes.fromhex(key)
 
-    for byte in shellcodeparsed:
-        xored_byte = byte ^ cle
-        xored_monshellcode.append(xored_byte)
+    xored_shellcode = bytearray()
+    key_length = len(key_bytes)
 
-    # Affichage du shellcode XOR et original
+    for i in range(len(shellcode_bytes)):
+        # Effectuer l'opération de XOR sur chaque octet
+        xored_byte = shellcode_bytes[i] ^ key_bytes[i % key_length]
+        xored_shellcode.append(xored_byte)
     
-    print("Shellcode d'origine :", monshellcode)
-    print("Shellcode chiffré :", xored_monshellcode)
+    print("Shellcode chiffré -> " ,xored_shellcode)

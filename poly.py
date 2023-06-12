@@ -5,11 +5,12 @@
 import argparse
 from chiffrement_xor import xor
 from chiffrement_aes import aes
+from spliter import spliter
 
 #Paramètres
 parser = argparse.ArgumentParser(description='[+] Chiffrement de shellcode')
 parser.add_argument('-s', '--shellcode', help='Entrez le shellcode')
-parser.add_argument('-t', '--type', help='Le type de chiffrement [XOR ou]')
+parser.add_argument('-t', '--type', help='Le type de chiffrement [XOR ou AES]')
 parser.add_argument('-k', '--key', help='La clé')
 args = parser.parse_args()
 
@@ -25,6 +26,8 @@ def help():
 
 if __name__ == "__main__":
     if type == "aes":
-        aes(shellcode, key)
+        print("Argument donées : ",shellcode, key)
+        aes(spliter(shellcode), spliter(key))
     elif type == "xor":
-        xor(shellcode, key)
+        print("Argument donées : ",shellcode, key)
+        xor(spliter(shellcode), spliter(key))

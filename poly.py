@@ -3,7 +3,7 @@
 
 # Les bibliothèques #
 import sys, argparse
-from xor import xor
+from chiffrement_xor import xor
 
 #Paramètres
 parser = argparse.ArgumentParser(description='[+] Chiffrement shellcode')

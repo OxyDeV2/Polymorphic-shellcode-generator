@@ -12,7 +12,12 @@ Installation du générateur
   git clone https://github.com/OxyDeV2/Shellcode-generator-polymorphism.git
   cd Shellcode-generator-polymorphism
 ```
-    
+
+## Fonctionnement
+
+Le fichier XOR.py contient la fonction pour XOR le shellcode.
+Le fichier AES.py contient la fonction pour chiffrer le shellcode avec l'algo de chiffrement AES.
+
 ## Developpeur
 
 - Skriix

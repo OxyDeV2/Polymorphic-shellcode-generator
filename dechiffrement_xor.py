@@ -30,5 +30,5 @@ def dexor(shellcode, key, debug):
         print("", end="")
 
         # - Resultat du polymorphisme - #
-    print("- Shellcode chiffré : ", crypted_shellcode, "\n- Taille : ",len(shellcode)*4," bit(s)\n")
+    print("- Shellcode dé-chiffré : ", crypted_shellcode, "\n- Taille : ",len(shellcode)*4," bit(s)\n")
 

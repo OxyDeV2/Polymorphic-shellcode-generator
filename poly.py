@@ -5,6 +5,7 @@
 import argparse
 import binascii
 from chiffrement_xor import xor
+from dechiffrement_xor import dexor
 from chiffrement_aes import aes
 from spliter import spliter
 

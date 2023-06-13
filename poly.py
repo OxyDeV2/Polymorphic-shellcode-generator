@@ -11,7 +11,7 @@ from spliter import spliter
 #Paramètres
 parser = argparse.ArgumentParser(description='[+] Chiffrement de shellcode')
 parser.add_argument('-s', '--shellcode', help='Entrez le shellcode')
-parser.add_argument('-t', '--type', help='Le type de chiffrement [XOR ou AES]')
+parser.add_argument('-t', '--type', help='Le type de chiffrement [XOR ou AES] - Pour dechiffrer [DEXOR ou DEAES]')
 parser.add_argument('-k', '--key', help='La clé')
 parser.add_argument('-d','--debug', help='Activation du debug [0 ou 1]')
 args = parser.parse_args()
@@ -33,5 +33,7 @@ if __name__ == "__main__":
         aes(spliter(shellcode, debug), spliter(key, debug), debug)
     elif type == "xor":
         xor(spliter(shellcode, debug), spliter(key, debug), debug)
+    elif type == "dexor":
+        dexor(spliter(shellcode, debug), spliter(key, debug), debug)
     else:
         parser.print_help()

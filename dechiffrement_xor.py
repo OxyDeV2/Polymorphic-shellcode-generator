@@ -1,7 +1,7 @@
 from bytetohex import bytetohex
 from unsplitter import unsplitter
 
-def xor(shellcode, key, debug):
+def dexor(shellcode, key, debug):
 
     # Conversion de la chaîne de caractères en bytes
     shellcode_bytes = bytes.fromhex(shellcode)

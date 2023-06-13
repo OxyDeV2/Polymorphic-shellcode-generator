@@ -1,7 +1,7 @@
 from bytetohex import bytetohex
 from unsplitter import unsplitter
 
-def xor(shellcode, key):
+def xor(shellcode, key, debug):
 
     # Conversion de la chaîne de caractères en bytes
     shellcode_bytes = bytes.fromhex(shellcode)
@@ -18,4 +18,17 @@ def xor(shellcode, key):
         hex_shellcode = bytetohex(xored_shellcode)
         crypted_shellcode = unsplitter(hex_shellcode)
 
+
+    if debug == "1":
+        print("{DEBUG-MOD} shellcode_bytes", shellcode_bytes)
+        print("{DEBUG-MOD} key_bytes", key_bytes)   
+        print("{DEBUG-MOD} xored_byte", xored_byte)
+        print("{DEBUG-MOD} xored_shellcode", xored_shellcode)
+        print("{DEBUG-MOD} hex_shellcode", hex_shellcode)
+        print("\n --- # ---------- # ---\n")
+    else:
+        print("", end="")
+
+        # - Resultat du polymorphisme - #
     print("- Shellcode chiffré : ", crypted_shellcode, "\n- Taille : ",len(shellcode)*4," bit(s)\n")
+

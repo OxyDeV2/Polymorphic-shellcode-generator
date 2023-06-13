@@ -20,7 +20,7 @@ def xor(shellcode, key, debug):
         hex_shellcode = bytetohex(xored_shellcode)
         crypted_shellcode = unsplitter(hex_shellcode)
         unsplitter_key = unsplitter(key)
-        unsplitter_key = unsplitter_key[1:]
+        final_key = unsplitter_key[1:]
 
 
     if debug == "1":
@@ -33,6 +33,7 @@ def xor(shellcode, key, debug):
     else:
         print("", end="")
 
+    print("\n ========== Shellcode information ==========\n")
         # - Resultat du polymorphisme - #
     taille = len(crypted_shellcode) / 4
     taille_sans_zero = str(int(taille))
@@ -41,5 +42,5 @@ def xor(shellcode, key, debug):
     taille_sans_zero_hex = hex(int(taille_sans_zero))
     taille_sans_zero_hex = taille_sans_zero_hex[1:]
     
-    payload = decryptor.replace("shellcode_len", taille_sans_zero_hex).replace("xor_key", unsplitter_key)
+    payload = decryptor.replace("shellcode_len", taille_sans_zero_hex).replace("xor_key", final_key)
     print("\n- Payload : ", payload + crypted_shellcode + "\n")

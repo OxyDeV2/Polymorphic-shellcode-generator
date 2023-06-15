@@ -3,20 +3,22 @@
 
 Le générateur de shellcode polymorphique développé en Python à but educatif.
 
-
 ## Installation
-
-Installation du générateur
 
 ```bash
   git clone https://github.com/OxyDeV2/Shellcode-generator-polymorphism.git
   cd Shellcode-generator-polymorphism
 ```
-
 ## Fonctionnement
 
-Le fichier XOR.py contient la fonction pour XOR le shellcode.
-Le fichier AES.py contient la fonction pour chiffrer le shellcode avec l'algo de chiffrement AES.
+Il suffit de lancer poly.py à l'aide de python3 et l'aide sera affichée concernant les arguments et ce qu'il faut entrer pour faire fonctionner le programme.
+
+## Organisation du code
+
+Chiffrement_aes : contient les fonctions pour le chiffrement AES
+chiffrement_xor : contient les fonctions 
+spliter : contient la fonction pour split le shellcode
+unsplitter : contient deux fonctions unsplit le shellcode
 
 ## Developpeur
 

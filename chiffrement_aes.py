@@ -7,7 +7,6 @@ def encrypt_shellcode(shellcode, key):
     iv = get_random_bytes(AES.block_size)
     cipher = AES.new(key, AES.MODE_CBC, iv)
     padded_shellcode = pad(shellcode.encode(), AES.block_size)
-    print("padded shellcode", padded_shellcode)
     encrypted_shellcode = cipher.encrypt(padded_shellcode)
     return iv, encrypted_shellcode
 
@@ -15,7 +14,5 @@ def encrypt_shellcode(shellcode, key):
 def decrypt_shellcode(encrypted_shellcode, key, iv):
     cipher = AES.new(key, AES.MODE_CBC, iv)
     decrypted_shellcode = cipher.decrypt(encrypted_shellcode)
-    print(decrypted_shellcode)
     unpadded_shellcode = unpad(decrypted_shellcode, AES.block_size)
-    print("unpadded shellcode", unpadded_shellcode)
     return unpadded_shellcode
